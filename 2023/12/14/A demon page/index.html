@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Welcome to my HomePage!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="热方程的重要性质首先考虑$n$维齐次方程$\partial_tu-\Delta u&#x3D;0$  伸缩不变性  $u(t,x)$是方程解时，$u_\lambda&#x3D;\lambda^\alpha u(\lambda^2, \lambda x)$也是。 特解  $\tilde{u}&#x3D;at^{-n&#x2F;2}e^{-|x|^2&#x2F;4t}$是方程的一个解，  特别地，定义">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Welcome to my HomePage!">
+<meta property="og:url" content="https://quiddite.github.io/2023/12/14/A%20demon%20page/index.html">
+<meta property="og:site_name" content="Welcome to my HomePage!">
+<meta property="og:description" content="热方程的重要性质首先考虑$n$维齐次方程$\partial_tu-\Delta u&#x3D;0$  伸缩不变性  $u(t,x)$是方程解时，$u_\lambda&#x3D;\lambda^\alpha u(\lambda^2, \lambda x)$也是。 特解  $\tilde{u}&#x3D;at^{-n&#x2F;2}e^{-|x|^2&#x2F;4t}$是方程的一个解，  特别地，定义">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-14T03:54:35.190Z">
+<meta property="article:modified_time" content="2023-12-14T03:56:11.081Z">
+<meta property="article:author" content="quiddite">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Welcome to my HomePage!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-A demon page" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+    <div class="article-meta">
+      <a href="/2023/12/14/A%20demon%20page/" class="article-date">
+  <time datetime="2023-12-14T03:54:35.190Z" itemprop="datePublished">2023-12-14</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="热方程的重要性质"><a href="#热方程的重要性质" class="headerlink" title="热方程的重要性质"></a>热方程的重要性质</h1><p>首先考虑$n$维齐次方程$\partial_tu-\Delta u&#x3D;0$</p>
+<ul>
+<li>伸缩不变性<br>  $u(t,x)$是方程解时，$u_\lambda&#x3D;\lambda^\alpha u(\lambda^2, \lambda x)$也是。</li>
+<li>特解<br>  $\tilde{u}&#x3D;at^{-n&#x2F;2}e^{-|x|^2&#x2F;4t}$是方程的一个解，<br>  特别地，定义<strong>热核</strong>为<br>  $\Phi(t,x)&#x3D;\dfrac{1}{(4\pi t)^{n&#x2F;2}}e^{-|x|^2&#x2F;4t}$。</li>
+<li>卷积和初值问题解<br>  初值问题形如$\left{\begin{array}{l}\partial_t u-\Delta u&#x3D;0,\u|<em>{t&#x3D;0}&#x3D;g(x)\end{array}\right.$<br>  如果$g$光滑性较好而且可积，方程解为<br>  $u(t,x)&#x3D;\Phi(t,\bullet)*g(x)&#x3D;\int</em>{\mathbb{R}^n}\Phi(x-y,t)g(y)\mathrm{d}y$，其中记号$f*g$称为卷积，它的性质包括<ul>
+<li>(Young不等式)$||f*g||<em>{L^r}\leqslant||f||</em>{L^p}||g||_{L^q}$，其中$1&#x2F;p+1&#x2F;q&#x3D;1&#x2F;r+1$，$f\in L^p,g\in L^q$；</li>
+<li>(光滑性与求导)$\phi\in\mathcal{S}(\mathbb{R}^n),f\in L^p$则$\phi<em>f\in C^\infty(\mathbb{R}^n)$而且<br>  $\partial^\alpha(\phi</em>f)&#x3D;\partial^\alpha\phi*f$。</li>
+</ul>
+</li>
+<li>无限传播速度<br>  如果$g$光滑性较好而且可积，$g\geqslant0$但$g\not\equiv 0$则有<br>  $u(t,x)&#x3D;\dfrac{1}{(4\pi t)^{n&#x2F;2}}\int_{\mathbb{R}^n}e^{-|x-y|^2&#x2F;4t}g(y)\mathrm{d}y&gt;0$。这说明初值带来一个扰动，那么空间中所有点都会受到影响。</li>
+<li>非齐次问题和Duhamel原理<br>  非齐次问题形如$\left{\begin{array}{l}\partial_t u-\Delta u&#x3D;f,\u|_{t&#x3D;0}&#x3D;0\end{array}\right.$。Duhamel原理说明求解非齐次问题本质上只需要求解初值问题：<blockquote>
+<p>$v(t,x)$是初值问题$\left{\begin{array}{l}\partial_t v-\Delta v&#x3D;0,\v|_{t&#x3D;0}&#x3D;f(s,x)\end{array}\right.$的解，则$u(t,x)&#x3D;\int_0^tv(t-s,x;s)\mathrm{d}s$是初值问题的解。</p>
+</blockquote>
+</li>
+<li>唯一性<br>  初值问题满足一定光滑性的解存在且唯一。</li>
+<li>热球和平均值公式<br>  定义热球为集合$E(x,t;r)&#x3D;{(y,s)\in\mathbb{R}^n\times\mathbb{R}|s\leqslant t,\Phi(t-s,x-y)\geqslant 1&#x2F;r^n}$。对于有界开集$\Omega$和$u(x,t)\in C^2(\Omega\times(0,T))$是齐次问题的解，有$\forall E(x,t;r)\subset\Omega\times(0,T]$<br>  $<code>math   u(x,t)=1/4r^n\iint_&#123;E(x,t;r)&#125;u(y,s)|x-y|^2/(t-s)^2\mathrm&#123;d&#125;y\mathrm&#123;d&#125;s\text&#123;。&#125;   $</code></li>
+<li>极值原理(最值只在边界取到)<br>  $\max_{\overline{\Omega}<em>T}u(x,t)&#x3D;\max</em>{\overline{\Omega}_T\backslash\Omega_T}$，其中$\Omega_T:&#x3D;\Omega\times(0,T)$。</li>
+<li>光滑效应<br>  $u\in C^{2,1}(\Omega_T)$是齐次问题的解，那么实际上$u\in C^\infty(\Omega_T)$。</li>
+<li>局部估计<br>  $u\in C^\infty$是齐次问题的解，那么$\forall \alpha\in\mathbb{N}^n,k\in\mathbb{N}$，$\exists C_{\alpha,k}&gt;0$，<br>  $<code>math   \max_&#123;C(x_0,t_0;r/2)&#125;|\partial^\alpha\partial^k_tu|\leqslant \dfrac&#123;C_&#123;\alpha,k&#125;&#125;&#123;r^&#123;|\alpha|+2k+n+2&#125;&#125;||u||_&#123;L^1(C(x_0,t_0;r)&#125;。   $</code></li>
+<li>向后唯一性<br>  $u$是齐次问题的解，如果$\exists T&gt;0$，$u(x,T)\equiv 0$则有$u\equiv 0$。</li>
+</ul>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/12/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello there</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/hejianxian" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2023 quiddite 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/hejianxian" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
