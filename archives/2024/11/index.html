@@ -1,178 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    
-    <title>archives: 2024/11 | Hexo</title>
-    
-    
-        <meta property="og:site_name" content="Hexo">
-    
-    
-        <meta property="article:author" content="quiddite">
-    
-    
-        <link rel="icon" href="/favicon.ico">
-    
-    
-<link rel="stylesheet" href="/css/minireset.min.css">
 
-    
-<link rel="stylesheet" href="/css/all.min.css">
+extends _includes/layout.pug
 
-    
-<link rel="stylesheet" href="/css/csshake.min.css">
+block content
+  - var categoriesList = list_categories({ show_count: false })
+  - var tagsList = list_tags({ show_count: false })
+  - var archivesList = list_archives({ show_count: false })
 
-    
-<link rel="stylesheet" href="/css/hljs/lioshi.css">
+  div.archive
+    if !is_year()
 
-    
-<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+      if theme.atom
+        p The feed is available via&nbsp;
+          a(href=theme.atom) atom
+          span .
+        br
 
-    
-<link rel="stylesheet" href="/styl/main.css">
+      aside
+        h2 Categories
+        if categoriesList
+          != categoriesList
+        else
+          p None.
+      br
 
-    
-<script src="/js/jquery.min.js"></script>
+      aside
+        h2 Tags
+        if tagsList
+          != tagsList
+        else
+          p None.
+      br
 
-    
-<script src="/js/highlight.min.js"></script>
+      aside
+        h2 Archives
+        if archivesList
+          != archivesList
+        else
+          p None.
+      br
 
-    
-<script src="/js/jquery.fancybox.min.js"></script>
+    else
 
-    
-<script src="/js/clipboard.min.js"></script>
+      h1= page.month + '/' + page.year
 
-    
-<meta name="generator" content="Hexo 7.3.0"></head>
-<body>
-    <header>
-  <div class="outer">
-    <div class="inner">
-      <h1 class="logo-wrap">
-        <a>Hexo<b><sup>1.2</sup></b></a>
-      </h1>
-    </div>
-    <div class="inner">
-      <nav class="main-nav">
-        
-          
-            <a href="/">首页</a>
-          
-        
-          
-            <a href="/archives">归档</a>
-          
-        
-          
-            <a href="/categories">分类</a>
-          
-        
-          
-            <a href="/tags">标签</a>
-          
-        
-          
-            <a href="/friends">友链</a>
-          
-        
-          
-            <div class="dropdown">
-              <a class="dropbtn">相关链接</a>
-              <div class="dropdown-content">
-                
-                  <a href="/2020/07/16/3a6087ce/">文章</a>
-                
-                  <a target="_blank" rel="noopener" href="https://www.baidu.com">百度一下你就知道</a>
-                
-              </div>
-            </div>
-          
-        
-          
-            <a href="/about">关于</a>
-          
-        
-      </nav>
-    </div>
-  </div>
-</header>
-    <div class="content">
-        <section class="outer">
+      - page.posts.each(function(article){
+        .archive-list-item
+          a(href=url_for(article.path))= article.title
+          time(datetime=date_xml(article.date))= date(article.date)
+      - })
 
-
-<link rel="stylesheet" href="/styl/archive.css">
-
-<div class="archive-wrapper">
-    
-    
-        
-            <div class="archive_year">
-                
-                <h2><a href="/archives/2024">2024</a></h2>
-                <hr>
-            </div>
-        
-        <div class="archive_post">
-            <a href="/archives/2024/11">11-17</a>
-            <a href="/2024/11/17/helloworld/" class="shake shake-little">helloworld</a>
-        </div>
-    
-        
-        <div class="archive_post">
-            <a href="/archives/2024/11">11-17</a>
-            <a href="/2024/11/17/hello-world/" class="shake shake-little">Hello World</a>
-        </div>
-    
-</div>
-
-
-
-
-
-
-    
-
-
-
-
-    
-    
-        
-        
-            
-        
-    
-
-<div class="turn_page">
-    
-
-
-    
-        <a class="page_current">1</a>
-    
-
-
-    
-</div>
-</section>
-    </div>
-    <footer>
-    <div class="outer">
-        <div class="inner">
-            Powered by <a href="https://github.com/hdxw/hexo-theme-prowiki" target="_blank">ProWiki</a>
-            &copy;2024 阿巴阿巴<br>
-            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
-            <div style="height: 50px;"></div>
-        </div>
-    </div>
-</footer>
-
-<script src="/js/custom.js"></script>
-
-
-    <script>onload_content();</script>
-
-</body>
-</html>
+      #paginator!= paginator()
