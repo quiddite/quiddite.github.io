@@ -10,7 +10,7 @@
 .dark {
   --bg: #061a20;
   --container-bg: #002b36;
-  --color: #fff;
+  --color: #000;
   --markdown-color: #efefef;
 }
 body,
