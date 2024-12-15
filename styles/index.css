@@ -968,7 +968,7 @@ html.ie6 .article kbd {
   border: 0;
 }
 .article .highlight {
-  background-color: #187fc3;
+  background-color: #fdf6e3;
   color: #187fc3;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -984,7 +984,7 @@ html.ie6 .article kbd {
 .article .highlight table .gutter {
   position: sticky;
   left: 0;
-  background: #187fc3;
+  background: #fdf6e3;
 }
 .article .highlight table .gutter pre {
   padding: 0 15px;
@@ -996,7 +996,7 @@ html.ie6 .article kbd {
   text-align: right;
 }
 .article pre.line-numbers {
-  background-color: #187fc3;
+  background-color: #fdf6e3;
   color: #187fc3;
 }
 .article .highlight pre {
