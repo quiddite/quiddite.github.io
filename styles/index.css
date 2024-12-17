@@ -17,7 +17,7 @@ body,
 html {
   padding: 0;
   margin: 0;
-  font: 16px sans-serif;
+  font: 16px "Times New Roman", "Georgia", sans-serif, "Fira Code", "JetBrans Mono", "Helvetica Neue", Helvetica, "Microsoft Yahei", Arial;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
@@ -355,7 +355,7 @@ hr {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   color: var(--markdown-color);
-  font-family: sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "Times New Roman", "Georgia", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 16px;
   word-wrap: break-word;
 /*
@@ -1375,7 +1375,7 @@ html.ie6 .read-more:active {
   border: 2px solid none;
 }
 .description {
-  color: #2eacd2;
+  color: #000;
 }
 nav {
   text-align: end;
