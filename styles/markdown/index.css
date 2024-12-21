@@ -19,7 +19,7 @@ hr {
 .article {
   text-size-adjust: 100%;
   color: var(--markdown-color);
-  font-family: "Georgia", "Times New Roman", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "Palentino", "Georgia", "Times New Roman", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 16px;
   word-wrap: break-word;
 /*
