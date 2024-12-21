@@ -1342,7 +1342,7 @@ html.ie6 .article .admonition {
   transition: all 300ms ease;
   display: inline-block;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
   background-color: var(--container-bg);
   border: 2px solid #2eacd2;
