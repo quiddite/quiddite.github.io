@@ -373,6 +373,15 @@ RHG</a> <a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~
 <pre><code>&lt;p&gt;这是折叠内容。&lt;/p&gt;</code></pre>
 </div>
 </div>
+<p>document.addEventListener(“DOMContentLoaded”, function() {</p>
+<p>const toggleButton = document.querySelector(“.toggle-button”);</p>
+<p>const content = document.querySelector(“.content”);</p>
+<p>toggleButton.addEventListener(“click”, function() {</p>
+<pre><code>content.style.display = content.style.display === &quot;none&quot; ? &quot;block&quot; : &quot;none&quot;;</code></pre>
+<p>});</p>
+<p>// 初始状态隐藏内容</p>
+<p>content.style.display = “none”;</p>
+<p>});</p>
 
                     </div>
                 </div>
