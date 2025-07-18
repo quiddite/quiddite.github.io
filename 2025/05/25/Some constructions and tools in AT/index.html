@@ -81,10 +81,10 @@ class="math inline"><em>M</em>(<em>G</em>, <em>n</em>)</span>
 <ul>
 <li>definition <span
 class="math inline"><em>M</em>(<em>G</em>, <em>n</em>):=</span>the CW
-complex with <span class="math inline">$H_i(-)=\left\{\begin{array}{ll}
+complex with <span class="math inline">$H_i(-)=\left.\begin{cases}
       0&amp;,i\neq n\\
       G&amp;,i=n
-  \end{array}\right.$</span>, we may also assume (_1(-)=0) if
+  \end{cases}\right.$</span>, we may also assume (_1(-)=0) if
 (n&gt;0).</li>
 <li>basic results</li>
 <li>applications <!-- 
@@ -103,11 +103,10 @@ class="math inline"><em>K</em>(<em>G</em>, <em>n</em>)</span>
 <ul>
 <li>definition <span
 class="math inline"><em>K</em>(<em>G</em>, <em>n</em>):=</span>the CW
-complex with <span
-class="math inline">$\pi_i(-)=\left\{\begin{array}{ll}
+complex with <span class="math inline">$\pi_i(-)=\left.\begin{cases}
       0&amp;,i\neq n\\
       G&amp;,i=n
-  \end{array}\right.$</span>.</li>
+  \end{cases}\right.$</span>.</li>
 <li>basic results
 <ul>
 <li>unique up to (weak) homotopy equivalence;</li>
@@ -116,17 +115,18 @@ class="math inline"><em>K</em>(<em>G</em>, <em>n</em>) × <em>K</em>(<em>H
 <li>representation results: Let <span
 class="math inline"><em>G</em></span> be an Ab-grp, <span
 class="math inline"><em>X</em></span> a CW complex, then <span
-class="math display">⟨<em>X</em>, <em>K</em>(<em>G</em>, <em>n</em>)⟩ ↔︎ <em>H</em><sup><em>n</em></sup>(<em>X</em>; <em>G</em>), [<em>f</em>] ↦ <em>f</em><sup>*</sup><em>α</em></span></li>
-<li>cohomology: <span
-class="math inline">$H^*(K(\mathbb{Z},n);\mathbb{Q})=\left\{\begin{array}{ll}
-\mathbb{Q}[x_n]&amp;,n\text{ is even}\\
-\mathbb{Q}[x_n]/(x_n^2)&amp;,n\text{ is odd}
-\end{array}\right.$</span>, using SSS with loopspace fibration, see page
-11 of <a href="https://quiddite.github.io/files_/AT-all.pdf"
-title="page 11">AT-all</a>. where <span
+class="math display">⟨<em>X</em>, <em>K</em>(<em>G</em>, <em>n</em>)⟩ ↔︎ <em>H</em><sup><em>n</em></sup>(<em>X</em>; <em>G</em>), [<em>f</em>] ↦ <em>f</em><sup>*</sup><em>α</em></span>
+where <span
 class="math inline"><em>α</em> ∈ <em>H</em><sup><em>n</em></sup>(<em>K</em>; <em>G</em>)) = <em>H</em><em>o</em><em>m</em>(<em>H</em><sub><em>n</em></sub>(<em>K</em>), <em>G</em>)</span>
 is given by the inverse of Hurewitz isomorphism <span
 class="math inline"><em>G</em> → <em>H</em><sub><em>n</em></sub>(<em>K</em>)</span>.</li>
+<li>cohomology: <span
+class="math inline">$H^*(K(\mathbb{Z},n);\mathbb{Q})=\left.\begin{cases}
+\mathbb{Q}[x_n]&amp;,n\text{ is even}\\
+\mathbb{Q}[x_n]/(x_n^2)&amp;,n\text{ is odd}
+\end{cases}\right.$</span>, using SSS with loopspace fibration, see page
+11 of <a href="https://quiddite.github.io/files_/AT-all.pdf"
+title="page 11">AT-all</a>.</li>
 </ul></li>
 <li>applications
 <ul>
