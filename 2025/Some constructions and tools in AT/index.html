@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="-en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiddite | Some frequently used  constructions (functors) and tools in AT</title>
+
+    
+    <meta name="description" content="Welcome to my blog! Contact me via &#34;quiddite[number four]dino[at]gmail[dot]com&#34;">
+    <meta name="keywords" content="quiddite">
+    <meta name="author" content="quiddite">
+
+    <meta name="color-scheme" content="light dark">
+
+    
+    
+<link rel="stylesheet" href="/styles/index.css">
+
+    
+    <link rel="shortcut icon" href="/imgs/logo.png">
+
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    
+    
+
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body id="delicate-app">
+    <main>
+        <div class="container">
+            <section class="page-top-badge flex-between w100">
+                <div>
+                    <a href="/">
+                        <span title="github"><i class="fa fa-home" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+                <!-- <div>
+                    
+                </div> -->
+            </section>
+            <aside class="toc-container">
+    <!-- sticky toc -->
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#spaces"><span class="toc-number">1.</span> <span class="toc-text">spaces</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#concerning-groups"><span class="toc-number">1.0.1.</span> <span class="toc-text">§ concerning groups</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#direct-constructions"><span class="toc-number">1.0.2.</span> <span class="toc-text">§ (direct) constructions</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#concerning-mappings"><span class="toc-number">1.0.3.</span> <span class="toc-text">§ concerning mappings</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tools"><span class="toc-number">2.</span> <span class="toc-text">tools</span></a></li></ol>
+</aside>
+
+<article class="markdown-container">
+    <section>
+        <h1>
+            <span>
+                Some frequently used  constructions (functors) and tools in AT
+            </span>
+        
+            <div class="post-info">
+                <span></span>
+                <span>
+                    7k words • 
+                    15minutes
+                </span>
+            </div>
+        </h1>
+    </section>
+
+    <section class="article">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="spaces">spaces</h3>
+<h5 id="concerning-groups">§ concerning groups</h5>
+<details>
+<summary>
+Moore space <span
+class="math inline"><em>M</em>(<em>G</em>, <em>n</em>)</span>
+</summary>
+<ul>
+<ul>
+<li>definition <span
+class="math inline"><em>M</em>(<em>G</em>, <em>n</em>):=</span>the CW
+complex with <span class="math inline">$H_i(-)=\left.\begin{cases}
+      0&amp;,i\neq n\\
+      G&amp;,i=n
+  \end{cases}\right.$</span>, we may also assume <span
+class="math inline"><em>π</em><sub>1</sub>(−) = 0</span> if <span
+class="math inline"><em>n</em> &gt; 0</span>.</li>
+<li>basic results</li>
+<li>applications <!-- 
+- definition
+- basic results
+- applications --></li>
+</ul>
+</ul>
+</details>
+<details>
+<summary>
+EM space <span
+class="math inline"><em>K</em>(<em>G</em>, <em>n</em>)</span>
+</summary>
+<ul>
+<ul>
+<li>definition <span
+class="math inline"><em>K</em>(<em>G</em>, <em>n</em>):=</span>the CW
+complex with <span class="math inline">$\pi_i(-)=\left.\begin{cases}
+      0&amp;,i\neq n\\
+      G&amp;,i=n
+  \end{cases}\right.$</span>.</li>
+<li>basic results
+<ul>
+<li>unique up to (weak) homotopy equivalence;</li>
+<li>product: <span
+class="math inline"><em>K</em>(<em>G</em>, <em>n</em>) × <em>K</em>(<em>H</em>, <em>n</em>) ≃ <em>K</em>(<em>G</em> × <em>H</em>, <em>n</em>)</span></li>
+<li>representation results: Let <span
+class="math inline"><em>G</em></span> be an Ab-grp, <span
+class="math inline"><em>X</em></span> a CW complex, then <span
+class="math display">⟨<em>X</em>, <em>K</em>(<em>G</em>, <em>n</em>)⟩ ↔︎ <em>H</em><sup><em>n</em></sup>(<em>X</em>; <em>G</em>), [<em>f</em>] ↦ <em>f</em><sup>*</sup><em>α</em></span>
+where <span
+class="math inline"><em>α</em> ∈ <em>H</em><sup><em>n</em></sup>(<em>K</em>; <em>G</em>)) = <em>H</em><em>o</em><em>m</em>(<em>H</em><sub><em>n</em></sub>(<em>K</em>), <em>G</em>)</span>
+is given by the inverse of Hurewitz isomorphism <span
+class="math inline"><em>G</em> → <em>H</em><sub><em>n</em></sub>(<em>K</em>)</span>.</li>
+<li>cohomology: <span
+class="math inline">$H^*(K(\mathbb{Z},n);\mathbb{Q})=\left.\begin{cases}
+\mathbb{Q}[x_n]&amp;,n\text{ is even}\\
+\mathbb{Q}[x_n]/(x_n^2)&amp;,n\text{ is odd}
+\end{cases}\right.$</span>, using SSS with loopspace fibration, see page
+11 of <a href="https://quiddite.github.io/files_/AT-all.pdf"
+title="page 11">AT-all</a>.</li>
+</ul></li>
+<li>applications
+<ul>
+<li>motivations of (complex) universal bundles: <span
+class="math inline"><em>K</em>(ℤ, 1) = <em>S</em><sup>1</sup>, <em>K</em>(ℤ/2, 1) = ℝℙ<sup>∞</sup>, <em>K</em>(ℤ, 2) = ℂℙ<sup>∞</sup></span>.</li>
+<li>(co)homology of groups: <span
+class="math inline"><em>H</em><sup><em>n</em></sup>(<em>G</em>) = <em>H</em><sup><em>n</em></sup>(<em>K</em>(<em>G</em>, <em>n</em>))</span></li>
+</ul></li>
+</ul>
+</ul>
+</details>
+<details>
+<summary>
+classifying space <span class="math inline"><em>B</em><em>G</em></span>
+</summary>
+<ul>
+<ul>
+<li>definition
+<ul>
+<li><span class="math inline"><em>B</em><em>G</em></span> is the CW
+complex such that there is a principle <span
+class="math inline"><em>G</em></span>-bundle <span
+class="math inline"><em>E</em><em>G</em> → <em>B</em><em>G</em></span>,
+with <span class="math inline"><em>E</em><em>G</em></span> weakly
+contractible</li>
+<li>construction (Milnor): for a topo-grp <span
+class="math inline"><em>G</em></span>, there is a accenting chain via
+topological join: <span
+class="math display"><em>G</em> ⊂ <em>G</em><sup>⋆2</sup> ⊂ ⋯ ⊂ <em>G</em><sup>⋆<em>n</em></sup>⋯</span>
+Let <span
+class="math inline"><em>E</em><em>G</em> = ∪<em>G</em><sup>⋆<em>n</em></sup></span>,
+<span
+class="math inline"><em>B</em><em>G</em> = <em>E</em><em>G</em>/<em>G</em></span>.</li>
+</ul></li>
+<li>basic results
+<ul>
+<li>uniqueness up to homotopy equivalence</li>
+<li>bijection: <span class="math inline">$[B,BG]\leftrightarrow
+Bun_{G}(B)=\left.\begin{cases}\text{principal } G-\\\text{bundles over
+B}\end{cases}\right\} /\cong$</span></li>
+</ul></li>
+<li>applications</li>
+</ul>
+</ul>
+</details>
+<details>
+<summary>
+Postnikov Towers
+</summary>
+<ul>
+</ul>
+</details>
+<h5 id="direct-constructions">§ (direct) constructions</h5>
+<details>
+<summary>
+connected sum <span class="math inline">⋅#⋅</span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+topological join <span class="math inline">⋅ ⋆ ⋅</span>
+</summary>
+<ul>
+<ul>
+<li><p>definition <span
+class="math inline"><em>M</em> ⋆ <em>N</em> = <em>M</em> × [0, 1] × <em>N</em>/∼</span>,
+where <span
+class="math inline">(<em>x</em>, 0, <em>y</em><sub>1</sub>) ∼ (<em>x</em>, 0, <em>y</em><sub>2</sub>), (<em>x</em><sub>1</sub>, 1, <em>y</em>) ∼ (<em>x</em><sub>2</sub>, 1, <em>y</em>)</span></p></li>
+<li><p>basic results</p>
+<ul>
+<li>if <span class="math inline"><em>M</em></span> is <span
+class="math inline"><em>m</em></span>-connented, <span
+class="math inline"><em>N</em></span> is <span
+class="math inline"><em>n</em></span>-connected, then <span
+class="math inline"><em>M</em> ⋆ <em>N</em></span> is <span
+class="math inline">(<em>m</em> + <em>n</em> + 2)</span>-connected.</li>
+<li><span
+class="math inline"><em>S</em><sup>0</sup> ⋆ <em>S</em><sup>0</sup> = <em>S</em><sup>1</sup>, <em>S</em><sup><em>m</em></sup> ⋆ <em>S</em><sup><em>n</em></sup> = <em>S</em><sup><em>m</em> + <em>n</em> + 1</sup></span>.</li>
+<li><span class="math inline"><em>M</em><sup>⋆<em>n</em></sup></span> is
+always <span class="math inline">(<em>n</em> − 2)</span>-connected.</li>
+</ul></li>
+<li><p>applications</p>
+<ul>
+<li>Milnor’s construction of classifying space: <span
+class="math inline"><em>E</em><em>G</em> = ∪<em>G</em><sup>⋆<em>n</em></sup>, <em>B</em><em>G</em> = <em>E</em><em>G</em>/<em>G</em></span></li>
+</ul></li>
+</ul>
+</ul>
+</details>
+<details>
+<summary>
+suspension <span class="math inline"><em>Σ</em><em>X</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+wedge sum <span class="math inline">⋅ ∨ ⋅</span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+smash product <span class="math inline">⋅ ∧ ⋅</span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+path space <span class="math inline"><em>P</em><em>X</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+loop space <span class="math inline"><em>Ω</em><em>X</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+Thom space <span class="math inline"><em>T</em><em>E</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+Configuration space <span
+class="math inline">Conf<sub><em>n</em></sub><em>X</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+Čech nerve
+</summary>
+<ul>
+</ul>
+</details>
+<h5 id="concerning-mappings">§ concerning mappings</h5>
+<details>
+<summary>
+mapping cylinder
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+mapping cone <span class="math inline"><em>C</em><em>f</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+mapping torus
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+lens space <span
+class="math inline"><em>S</em><sup>−</sup>/ℤ<sub>•</sub></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+Hopf torus
+</summary>
+<ul>
+</ul>
+</details>
+<h3 id="tools">tools</h3>
+<ul>
+<li>fiber bundle</li>
+<li>Gysin sequence</li>
+<li>Leray-Hirsch</li>
+<li>Thom class</li>
+<li>Steenrod square</li>
+</ul>
+<!-- 
+<details>
+  <summary>Click to reveal more details</summary>
+  <p>This is the hidden content.</p>
+</details> -->
+
+    </section>
+
+    
+        <section class="post-tag">
+            <a href="/tags"><i class="fa fa-tags"></i></a>
+            
+                <a href="/tags/misc/" class="tag-item">
+                    misc
+                </a>
+            
+        </section>
+    
+    
+        <section class="post-cate">
+            <a href="/categories"><i class="fa fa-inbox"></i></a>
+            
+                <a href="/categories/math/" class="cate-item">
+                    math
+                </a>
+            
+        </section>
+    
+
+    <section class="post-cc">
+        <div class="post-cc-author">
+            <span class="bold">author：</span><a href="mailto:quiddite4dino at gmail.com" title="quiddite">quiddite</a>
+        </div>
+        <div class="post-cc-link">
+            <span class="bold">link：</span><a href="/2025/Some%20constructions%20and%20tools%20in%20AT/">https://quiddite.github.io/2025/Some constructions and tools in AT/</a>
+        </div>
+        <div class="post-cc-source">
+            <span class="bold">source：</span><a href="/">quiddite</a>
+        </div>
+        <div class="ppost-cc-declare">
+            <span class="bold">版权声明: </span>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> 许可协议。著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 
+        </div>
+    </section>
+
+    <section class="flex-between" style="margin: 20px 0;">
+        <div class="pre">
+            
+                <a href="/2025/g2tlearning/" class="change-link">
+                    <span class="icon"><i class="fa fa-angle-double-left"></i></span>
+                    <span class="text">
+                        <span class="identify">previous post</span>
+                        <span class="text-title">G2T learning materials</span>
+                    </span>
+                </a>
+            
+        </div>
+        <div class="next">
+            
+                <a href="/2025/2024-2025-2/" class="change-link">
+                    <span class="text">
+                        <span class="identify" style="text-align: right;">the next post</span>
+                        <span class="text-title" style="text-align: right;">2024-2025-2</span>
+                    </span>
+                    <span class="icon"><i class="fa fa-angle-double-right"></i></span>
+                </a>
+            
+        </div>
+    </section>
+
+    <!-- comment -->
+    <section class="comment-container">
+        <!-- giscus -->
+        
+    </section>
+</article>
+
+
+
+
+            <section class="article-bottom flex-between">
+                <div class="flex-center">
+                    <img src="/imgs/logo.png" class="logo">
+                    <span>Nevermore.</span>
+                </div>
+                <div class="flex-center">
+                    <a href="mailto:quiddite4dino at gmail.com">
+                        <span title="envelope">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                    <a target="_blank" rel="noopener" href="https://github.com/quiddite">
+                        <span title="github" style="font-size: 18px;">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="to-top">
+    <a href="javascript: void(0)" onclick="delicate.toTop()">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <footer>
+        <div class="footer-info gray">
+    <div>
+        <span><a target="_blank" rel="noopener" href="https://github.com/can-dy-jack/hexo-theme-delicate">Delicate</a> theme designed with ❤️ by <a target="_blank" rel="noopener" href="https://github.com/can-dy-jack">can-dy-jack</a></span>
+    </div>
+    <div>
+        <span>Copyright Ⓒ 2025. All rights reserved.</span>
+    </div>
+</div>
+    </footer>
+
+    
+
+
+<script src="/js/index.js"></script>
+
+
+</body>
+
+</html>
