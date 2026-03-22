@@ -1,16 +1,12 @@
-extends widget/base
+extends partial/layout.pug
 
-block append head
-    link(rel='stylesheet', href= url_for("/style/widget-post-list.css"))
+block container
+    include mixins/post.pug
+    +postList()
 
-block topic
-    span= `${ _p('archive') } · ${ page.year || __('all') }`
+block pagination
+    include mixins/paginator.pug
+    +home()
 
-block content
-    include widget/widget-post-list
-        block sidebar
-            div(style="position: sticky; top: 50px;")
-                include widget/widget-archives
-
-
-
+block copyright
+    include partial/copyright.pug
