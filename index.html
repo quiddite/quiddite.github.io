@@ -1,12 +1,5 @@
-extends partial/layout.pug
+extends includes/layout.pug
 
-block container
-    include mixins/post.pug
-    +posts()
-
-block pagination
-    include mixins/paginator.pug
-    +home()
-
-block copyright
-    include partial/copyright.pug
+block content
+  include includes/recent-posts.pug
+  include includes/pagination.pug
