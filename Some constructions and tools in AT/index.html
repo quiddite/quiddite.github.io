@@ -1,72 +1,468 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html lang="-en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="网站关键字">
+  <meta name="description" content="网站简介">
+  
+  <title>For the &lt;em&gt;beautiful world&lt;/em&gt; !</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+<link rel="shortcut icon" href="/source/favicon.ico">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-block content
-  #post-outer
-    #share-col
-      #shareButtons
-        if theme.Share.on
-          #shareButtonsInner
-            span.social-share(data-sites=theme.Share.datasites)
-    #mid-col
-      #post
-        #titles
-          span.ribbon
-            span.ri!= __("origin")
-          #first-line
-            h1!= page.title == "" ? "&nbsp" : page.title
-            .date
-              span.post-title-icons
-                i.fa.fa-calendar
-              time.words(datetime=date_xml(page.date))= date(page.date)
-          #post-information
-            if page.categories.data.length
-              a.category-post
-                span.post-title-icons
-                  i.fa.fa-book
-                each category, index in page.categories.data
-                    span.words(href=url_for(category.path)) #{category.name}
-            if page.tags.data.length
-              a.post-tag
-                span.post-title-icons
-                  i.fa.fa-tag
-                each tag, index in page.tags.data
-                    span.words(href=url_for(tag.path)) #{tag.name}  
-            if theme.wordCount != undefined && theme.wordCount
-              span.post-title-icons  
-                i.fa.fa-clock
-              if min2read(page.content) !== "1"
-                span.words!= min2read(page.content) + " mins"
-              else
-                span.words!= min2read(page.content) + " min"
-              span.post-title-icons
-                i.fa.fa-file-alt
-              span.words!= wordcount(page.content) + " words"
-            
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg.png);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.png" ondragstart="return false;"></div>
+    <p>quiddite</p>
+    <div class="nav-link">
         
-        #post-content
-          - if (theme.mathjax.enable && (theme.mathjax.per_page || page.mathjax))
-            include third-party/mathjax.pug
-          - let notes = theme.Warning.Content.split('{}');
-          - let diffDays = moment(new Date()).diff(moment(page.date), 'day');
-            if (page.warning || theme.Warning.on) && diffDays > theme.Warning.Days
-              .date-warning
-                span!= notes[0]
-                strong!= diffDays
-                span!= notes[1]
-            != page.content
-          include includes/copyright.pug
-                  
-      include includes/pagination.pug
-      include includes/comment.pug
-      include includes/locate-button.pug
-    #toc-col
-      include includes/side-user.pug
-      include includes/toc.pug 
-  script.
-    var desc = "#{page.excerpt}";
-    var $config = {
-        description         : desc,
-        wechatQrcodeTitle   : "#{theme.Share.wechatQrcodeTitle}", // 微信二维码提示文字
-        wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
-    };
-    //- socialShare('.social-share', $config);
+        <a href="http://example.com" target="_blank"> <div class="link-box twitter"></div></a>
+        
+        
+        <a  href="http://example.com" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        <a href="mailto:http://example.com"><div class="link-box email"></div></a>
+        
+        
+        <a href="http://example.com" target="_blank"><div class="link-box weibo"></div></a>
+        
+        
+        <a href="http://example.com" target="_blank"> <div class="link-box zhihu"></div></a>
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2026/02/">February 2026<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2025/09/">September 2025<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2025/06/">June 2025<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2025/05/">May 2025<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2025/03/">March 2025<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2024/12/">December 2024<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2024/11/">November 2024<span class="archive-count">1</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/ensembles/">ensembles<span class="category-count">4</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/math/">math<span class="category-count">4</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/qe/">qe<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<!--about-->
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title"  style="background-color:#26A69A;background-image:url(/images/random/vateral-9.png)" >
+  <h2>Some frequently used  constructions (functors) and tools in AT</h2>
+    
+  <p>作者:quiddite &nbsp&nbsp 发布于:<time datetime="2025-05-25T15:40:27.000Z">
+          2025-05-25
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="spaces">spaces</h3>
+<h5 id="concerning-groups">§ concerning groups</h5>
+<details>
+<summary>
+Moore space <span
+class="math inline"><em>M</em>(<em>G</em>, <em>n</em>)</span>
+</summary>
+<ul>
+<ul>
+<li>definition <span
+class="math inline"><em>M</em>(<em>G</em>, <em>n</em>):=</span>the CW
+complex with <span class="math inline">$H_i(-)=\left.\begin{cases}
+      0&amp;,i\neq n\\
+      G&amp;,i=n
+  \end{cases}\right.$</span>, we may also assume <span
+class="math inline"><em>π</em><sub>1</sub>(−) = 0</span> if <span
+class="math inline"><em>n</em> &gt; 0</span>.</li>
+<li>basic results</li>
+<li>applications <!-- 
+- definition
+- basic results
+- applications --></li>
+</ul>
+</ul>
+</details>
+<details>
+<summary>
+EM space <span
+class="math inline"><em>K</em>(<em>G</em>, <em>n</em>)</span>
+</summary>
+<ul>
+<ul>
+<li>definition <span
+class="math inline"><em>K</em>(<em>G</em>, <em>n</em>):=</span>the CW
+complex with <span class="math inline">$\pi_i(-)=\left.\begin{cases}
+      0&amp;,i\neq n\\
+      G&amp;,i=n
+  \end{cases}\right.$</span>.</li>
+<li>basic results
+<ul>
+<li>unique up to (weak) homotopy equivalence;</li>
+<li>product: <span
+class="math inline"><em>K</em>(<em>G</em>, <em>n</em>) × <em>K</em>(<em>H</em>, <em>n</em>) ≃ <em>K</em>(<em>G</em> × <em>H</em>, <em>n</em>)</span></li>
+<li>representation results: Let <span
+class="math inline"><em>G</em></span> be an Ab-grp, <span
+class="math inline"><em>X</em></span> a CW complex, then <span
+class="math display">⟨<em>X</em>, <em>K</em>(<em>G</em>, <em>n</em>)⟩ ↔︎ <em>H</em><sup><em>n</em></sup>(<em>X</em>; <em>G</em>), [<em>f</em>] ↦ <em>f</em><sup>*</sup><em>α</em></span>
+where <span
+class="math inline"><em>α</em> ∈ <em>H</em><sup><em>n</em></sup>(<em>K</em>; <em>G</em>)) = <em>H</em><em>o</em><em>m</em>(<em>H</em><sub><em>n</em></sub>(<em>K</em>), <em>G</em>)</span>
+is given by the inverse of Hurewitz isomorphism <span
+class="math inline"><em>G</em> → <em>H</em><sub><em>n</em></sub>(<em>K</em>)</span>.</li>
+<li>cohomology: <span
+class="math inline">$H^*(K(\mathbb{Z},n);\mathbb{Q})=\left.\begin{cases}
+\mathbb{Q}[x_n]&amp;,n\text{ is even}\\
+\mathbb{Q}[x_n]/(x_n^2)&amp;,n\text{ is odd}
+\end{cases}\right.$</span>, using SSS with loopspace fibration, see page
+11 of <a href="https://quiddite.github.io/files_/AT-all.pdf"
+title="page 11">AT-all</a>.</li>
+</ul></li>
+<li>applications
+<ul>
+<li>motivations of (complex) universal bundles: <span
+class="math inline"><em>K</em>(ℤ, 1) = <em>S</em><sup>1</sup>, <em>K</em>(ℤ/2, 1) = ℝℙ<sup>∞</sup>, <em>K</em>(ℤ, 2) = ℂℙ<sup>∞</sup></span>.</li>
+<li>(co)homology of groups: <span
+class="math inline"><em>H</em><sup><em>n</em></sup>(<em>G</em>) = <em>H</em><sup><em>n</em></sup>(<em>K</em>(<em>G</em>, <em>n</em>))</span></li>
+</ul></li>
+</ul>
+</ul>
+</details>
+<details>
+<summary>
+classifying space <span class="math inline"><em>B</em><em>G</em></span>
+</summary>
+<ul>
+<ul>
+<li>definition
+<ul>
+<li><span class="math inline"><em>B</em><em>G</em></span> is the CW
+complex such that there is a principle <span
+class="math inline"><em>G</em></span>-bundle <span
+class="math inline"><em>E</em><em>G</em> → <em>B</em><em>G</em></span>,
+with <span class="math inline"><em>E</em><em>G</em></span> weakly
+contractible</li>
+<li>construction (Milnor): for a topo-grp <span
+class="math inline"><em>G</em></span>, there is a accenting chain via
+topological join: <span
+class="math display"><em>G</em> ⊂ <em>G</em><sup>⋆2</sup> ⊂ ⋯ ⊂ <em>G</em><sup>⋆<em>n</em></sup>⋯</span>
+Let <span
+class="math inline"><em>E</em><em>G</em> = ∪<em>G</em><sup>⋆<em>n</em></sup></span>,
+<span
+class="math inline"><em>B</em><em>G</em> = <em>E</em><em>G</em>/<em>G</em></span>.</li>
+</ul></li>
+<li>basic results
+<ul>
+<li>uniqueness up to homotopy equivalence</li>
+<li>bijection: <span class="math inline">$[B,BG]\leftrightarrow
+Bun_{G}(B)=\left.\begin{cases}\text{principal } G-\\\text{bundles over
+B}\end{cases}\right\} /\cong$</span></li>
+</ul></li>
+<li>applications</li>
+</ul>
+</ul>
+</details>
+<details>
+<summary>
+Postnikov Towers
+</summary>
+<ul>
+</ul>
+</details>
+<h5 id="direct-constructions">§ (direct) constructions</h5>
+<details>
+<summary>
+connected sum <span class="math inline">⋅#⋅</span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+topological join <span class="math inline">⋅ ⋆ ⋅</span>
+</summary>
+<ul>
+<ul>
+<li><p>definition <span
+class="math inline"><em>M</em> ⋆ <em>N</em> = <em>M</em> × [0, 1] × <em>N</em>/∼</span>,
+where <span
+class="math inline">(<em>x</em>, 0, <em>y</em><sub>1</sub>) ∼ (<em>x</em>, 0, <em>y</em><sub>2</sub>), (<em>x</em><sub>1</sub>, 1, <em>y</em>) ∼ (<em>x</em><sub>2</sub>, 1, <em>y</em>)</span></p></li>
+<li><p>basic results</p>
+<ul>
+<li>if <span class="math inline"><em>M</em></span> is <span
+class="math inline"><em>m</em></span>-connented, <span
+class="math inline"><em>N</em></span> is <span
+class="math inline"><em>n</em></span>-connected, then <span
+class="math inline"><em>M</em> ⋆ <em>N</em></span> is <span
+class="math inline">(<em>m</em> + <em>n</em> + 2)</span>-connected.</li>
+<li><span
+class="math inline"><em>S</em><sup>0</sup> ⋆ <em>S</em><sup>0</sup> = <em>S</em><sup>1</sup>, <em>S</em><sup><em>m</em></sup> ⋆ <em>S</em><sup><em>n</em></sup> = <em>S</em><sup><em>m</em> + <em>n</em> + 1</sup></span>.</li>
+<li><span class="math inline"><em>M</em><sup>⋆<em>n</em></sup></span> is
+always <span class="math inline">(<em>n</em> − 2)</span>-connected.</li>
+</ul></li>
+<li><p>applications</p>
+<ul>
+<li>Milnor’s construction of classifying space: <span
+class="math inline"><em>E</em><em>G</em> = ∪<em>G</em><sup>⋆<em>n</em></sup>, <em>B</em><em>G</em> = <em>E</em><em>G</em>/<em>G</em></span></li>
+</ul></li>
+</ul>
+</ul>
+</details>
+<details>
+<summary>
+suspension <span class="math inline"><em>Σ</em><em>X</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+wedge sum <span class="math inline">⋅ ∨ ⋅</span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+smash product <span class="math inline">⋅ ∧ ⋅</span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+path space <span class="math inline"><em>P</em><em>X</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+loop space <span class="math inline"><em>Ω</em><em>X</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+Thom space <span class="math inline"><em>T</em><em>E</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+Configuration space <span
+class="math inline">Conf<sub><em>n</em></sub><em>X</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+Čech nerve
+</summary>
+<ul>
+</ul>
+</details>
+<h5 id="concerning-mappings">§ concerning mappings</h5>
+<details>
+<summary>
+mapping cylinder
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+mapping cone <span class="math inline"><em>C</em><em>f</em></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+mapping torus
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+lens space <span
+class="math inline"><em>S</em><sup>−</sup>/ℤ<sub>•</sub></span>
+</summary>
+<ul>
+</ul>
+</details>
+<details>
+<summary>
+Hopf torus
+</summary>
+<ul>
+</ul>
+</details>
+<h3 id="tools">tools</h3>
+<ul>
+<li>fiber bundle</li>
+<li>Gysin sequence</li>
+<li>Leray-Hirsch</li>
+<li>Thom class</li>
+<li>Steenrod square</li>
+</ul>
+<!-- 
+<details>
+  <summary>Click to reveal more details</summary>
+  <p>This is the hidden content.</p>
+</details> -->
+
+  </div>
+  <!--评论块-->
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+  <a href="/g2tlearning/" id="post_nav-newer" class="post-nav-content prev-content">
+      新篇
+  </a>
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2024-2025-2/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#spaces"><span class="post-toc-number">1.</span> <span class="post-toc-text">spaces</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#concerning-groups"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">§ concerning groups</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#direct-constructions"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">§ (direct) constructions</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#concerning-mappings"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">§ concerning mappings</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#tools"><span class="post-toc-number">2.</span> <span class="post-toc-text">tools</span></a></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  For the &lt;em&gt;beautiful world&lt;/em&gt; !</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>

@@ -1,72 +1,500 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html lang="-en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="网站关键字">
+  <meta name="description" content="网站简介">
+  
+  <title>For the &lt;em&gt;beautiful world&lt;/em&gt; !</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+<link rel="shortcut icon" href="/source/favicon.ico">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-block content
-  #post-outer
-    #share-col
-      #shareButtons
-        if theme.Share.on
-          #shareButtonsInner
-            span.social-share(data-sites=theme.Share.datasites)
-    #mid-col
-      #post
-        #titles
-          span.ribbon
-            span.ri!= __("origin")
-          #first-line
-            h1!= page.title == "" ? "&nbsp" : page.title
-            .date
-              span.post-title-icons
-                i.fa.fa-calendar
-              time.words(datetime=date_xml(page.date))= date(page.date)
-          #post-information
-            if page.categories.data.length
-              a.category-post
-                span.post-title-icons
-                  i.fa.fa-book
-                each category, index in page.categories.data
-                    span.words(href=url_for(category.path)) #{category.name}
-            if page.tags.data.length
-              a.post-tag
-                span.post-title-icons
-                  i.fa.fa-tag
-                each tag, index in page.tags.data
-                    span.words(href=url_for(tag.path)) #{tag.name}  
-            if theme.wordCount != undefined && theme.wordCount
-              span.post-title-icons  
-                i.fa.fa-clock
-              if min2read(page.content) !== "1"
-                span.words!= min2read(page.content) + " mins"
-              else
-                span.words!= min2read(page.content) + " min"
-              span.post-title-icons
-                i.fa.fa-file-alt
-              span.words!= wordcount(page.content) + " words"
-            
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg.png);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.png" ondragstart="return false;"></div>
+    <p>quiddite</p>
+    <div class="nav-link">
         
-        #post-content
-          - if (theme.mathjax.enable && (theme.mathjax.per_page || page.mathjax))
-            include third-party/mathjax.pug
-          - let notes = theme.Warning.Content.split('{}');
-          - let diffDays = moment(new Date()).diff(moment(page.date), 'day');
-            if (page.warning || theme.Warning.on) && diffDays > theme.Warning.Days
-              .date-warning
-                span!= notes[0]
-                strong!= diffDays
-                span!= notes[1]
-            != page.content
-          include includes/copyright.pug
-                  
-      include includes/pagination.pug
-      include includes/comment.pug
-      include includes/locate-button.pug
-    #toc-col
-      include includes/side-user.pug
-      include includes/toc.pug 
-  script.
-    var desc = "#{page.excerpt}";
-    var $config = {
-        description         : desc,
-        wechatQrcodeTitle   : "#{theme.Share.wechatQrcodeTitle}", // 微信二维码提示文字
-        wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
-    };
-    //- socialShare('.social-share', $config);
+        <a href="http://example.com" target="_blank"> <div class="link-box twitter"></div></a>
+        
+        
+        <a  href="http://example.com" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        <a href="mailto:http://example.com"><div class="link-box email"></div></a>
+        
+        
+        <a href="http://example.com" target="_blank"><div class="link-box weibo"></div></a>
+        
+        
+        <a href="http://example.com" target="_blank"> <div class="link-box zhihu"></div></a>
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2026/02/">February 2026<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2025/09/">September 2025<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2025/06/">June 2025<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2025/05/">May 2025<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2025/03/">March 2025<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2024/12/">December 2024<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2024/11/">November 2024<span class="archive-count">1</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/ensembles/">ensembles<span class="category-count">4</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/math/">math<span class="category-count">4</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/qe/">qe<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<!--about-->
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title"  style="background-color:#26A69A;background-image:url(/images/random/vateral-1.png)" >
+  <h2>2025-2026-2</h2>
+    
+  <p>作者:quiddite &nbsp&nbsp 发布于:<time datetime="2026-02-23T16:00:00.000Z">
+          2026-02-24
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>This
+<a target="_blank" rel="noopener" href="https://cloud.tsinghua.edu.cn/smart-link/bfd89008-6b43-4788-9ee4-af5c9b713ef0/">.md</a>
+<a target="_blank" rel="noopener" href="https://cloud.tsinghua.edu.cn/lib/40af1151-9d04-4c74-a297-5675c88a0e55/file/script26s.txt">file</a>
+is devoted to gather (most of) the materials for the courses I took in
+this semester, for preparation, plan and review.</p>
+<div style="column-count: 2;">
+<p><em>two separate glances meet</em></p>
+<details>
+<summary>
+recent
+</summary>
+<div style="display: flex;">
+<div>
+<ul>
+<li>
+<a href="file:///Users/a86182/Zotero/storage/JENEMVVL/Bonk%20and%20Kleiner%20-%202002%20-%20Quasisymmetric%20parametrizations%20of%20two-dimensional%20metric%20spheres.pdf">BK02</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Zotero/storage/DMJCIPQE/Li%20-%202021%20-%20Quasisymmetric%20Embeddability%20of%20Weak%20Tangents.pdf">Li21</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Zotero/storage/3IZ3IATW/Hakobyan%20and%20Li%20-%202021%20-%20Quasisymmetric%20embeddings%20of%20slit%20Sierpi%C5%84ski%20carpets.pdf">HL21</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Zotero/storage/PCBEC5FY/Binder%20et%20al.%20-%202024%20-%20Conformal%20Dimension%20of%20the%20Brownian%20Graph.pdf">BHL24</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Zotero/storage/3PRYDGX9/DS-pub-0056.pdf">Sullivan</a>
+</li>
+</ul>
+</div>
+<div>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/____26s-readings/Liu and Su - 2012 - The horofunction compactification of Teichmüller metric.pdf">horo</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/____26s-readings/Goldman - 1988 - Topological components of spaces of representations.pdf">goldman
+1</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/____26s-readings/goldman_discontinuous groups and the euler class (phd thesis).pdf">goldman
+2</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/____26s-readings/Nguyen - ON HYPERBOLIC CONE METRICS, PSL(2,R)-CHARACTER VARIETIES, AND BRANCHED COVERINGS.pdf">nguyen</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/____26s-readings/Su - PROBLEMS ON THURSTON METRIC.pdf">problems</a>
+</li>
+</ul>
+</div>
+</div>
+<div style="display: flex;">
+<div>
+supports
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile%20Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/MG metric geometry/Heinonen%20metric%20measure%20spaces.pdf">Heinonen</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile%20Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/MG metric geometry/BBI%20metric%20geometry.pdf">BBI</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Zotero/storage/TV5XJAPL/Keith and Laakso - 2004 - Conformal assouad dimension and modulus.pdf">KL04</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Zotero/storage/Y67LU9IH/Merenkov - 2010 - A Sierpiński carpet with the co-Hopfian property.pdf">Me10</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Zotero/storage/C4782AS8/Bonk and Meyer - 2017 - Expanding Thurston Maps.pdf">ETM</a>
+</li>
+</ul>
+</div>
+<div>
+more items
+<ul>
+<li>
+<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2510.01008">JW25</a>
+</li>
+</ul>
+and archive
+<ul>
+<li>
+<a href="file://">bla</a>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<h3
+id="em-syl-tt">EM-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/EM.pdf">syl</a>-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/EM 教学日历v0.pdf">tt</a></h3>
+<details>
+<summary>
+books
+</summary>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/EM Li-Electromagnetism-Geometry.pdf">Si-LI</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/EM 电动力学-郭硕鸿.pdf">郭硕鸿</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/EM 电动力学简明教程(俞允强).pdf">俞允强</a>
+</li>
+</ul>
+</details>
+<details>
+<summary>
+lecture notes
+</summary>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/EM Lecture-1.pdf">lecture
+1</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/EM Lecture-2.pdf">lecture
+2</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/EM Lecture-3.pdf">lecture
+3</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/EM Lecture-4.pdf">lecture
+4</a>
+</li>
+</ul>
+</details>
+<details>
+<summary>
+homeworks
+</summary>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/EM 作业1.pdf">HW
+1</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/EM 作业2.pdf">HW
+2</a> due 4/3 at night
+</li>
+</ul>
+</details>
+<h3
+id="am-syl">AM-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/AM.pdf">syl</a></h3>
+<details>
+<summary>
+books
+</summary>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AM Lecture-Classical-Mechanics.pdf">Si-LI</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AM AnalyticMechanicsSCecotti.pdf">Cecotti</a>
+</li>
+</ul>
+</details>
+<details>
+<summary>
+lecture notes
+</summary>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AM note 1.pdf">note
+1</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AM note 2.pdf">note
+2</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AM note 3.pdf">note
+3</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AM note 4.pdf">note
+4</a>
+</li>
+</ul>
+</details>
+<details>
+<summary>
+homeworks
+</summary>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AM homework 1.pdf">HW
+1</a> due: 3/25 night
+</li>
+</ul>
+</details>
+<h3
+id="hg-syl">HG-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/HG.pdf">syl</a></h3>
+<p><a target="_blank" rel="noopener" href="https://www.tsinghua.edu.cn/xl/2026chunji.jpg">week</a>
+1-12</p>
+<h3
+id="as-syl">AS-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/AS.pdf">syl</a></h3>
+<details>
+<summary>
+lecture slides
+</summary>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AS lecture1.pdf">lecture
+1</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AS lecture2.pdf">lecture
+2</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AS lecture3.pdf">lecture
+3</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AS lecture4.pdf">lecture
+4</a>
+</li>
+</ul>
+</details>
+<details>
+<summary>
+homeworks
+</summary>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AS HW1.pdf">homework
+1</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/AS HW2.pdf">homework
+2</a>
+</li>
+</ul>
+</details>
+<h3
+id="eng-syl">Eng-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/Eng.pdf">syl</a></h3>
+<!-- # GLMY-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/GLMY.pdf">syl</a> -->
+<!-- # DT-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/DT.pdf">syl</a>... -->
+<h3
+id="latin-syl">Latin-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/Latin.pdf">syl</a></h3>
+<p><a target="_blank" rel="noopener" href="https://www.tsinghua.edu.cn/xl/2026chunji.jpg">week</a>
+9-16</p>
+<!-- 
+# LP-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/LP 2026 研究生《语言哲学》教学大纲 v2.pdf">syl</a>
+
+
+<details>
+<summary>books</summary>
+<ul>
+  <li><a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/LP Philosophical Investigations (TEACHING).pdf">PI</a></li>
+  <li><a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/LP Malcolm - Ludwig Wittgenstein, A Memoir.pdf">memoir</a></li>
+  <li><a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/LP von Wright - Biographical Sketch of Wittgenstein (1955).pdf">bio</a></li>
+  <li><a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/LP Tips on Reading Wittgenstein.pdf">tips</a></li>
+</ul>
+</details> -->
+<h3
+id="nf-syl">NF-<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/NF.pdf">s</a><a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/syl/NF1.pdf">yl</a>…</h3>
+<details>
+<summary>
+literatures
+</summary>
+<ul>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/NF A pale view of hills -- Ishiguro, Kazuo, 1954- -- Penguin Random House LLC, New York, 1990 -- New York_ Vintage Books -- 9780307829078 -- 349dec4d77f71fc3a0d54e9acaf1d437 -- Anna’s Archive.pdf">APVOH</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/NF The Remains of the Day _ Winner of the Nobel Prize in -- Kazuo Ishiguro -- Penguin Random House LLC, New York, 2010 -- VINTAGU INTERNATIONAL -- 9780307576187 -- 1b0a29f59f37bdd252faf9be8b2b9103 -- Anna’s Archive.pdf">TROTD</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/NF Never Let Me Go -- Ishiguro, Kazuo -- Mar 25, 2005 -- Knopf -- 9780739457955 -- fd48654b5f8ab43146b25708107d783b -- Anna’s Archive.pdf">NLMG</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/NF A Strange and Sometimes Sadness -- Ishiguro, Kazuo -- 0 -- b0e38e473da3259e05c0fb809d6e1668 -- Anna’s Archive.pdf">ASASS</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/NF amily-supper_ishiguro.pdf">FS</a>
+</li>
+<li>
+<a href="file:///Users/a86182/Library/Mobile Documents/com~apple~CloudDocs/____26spring/NF Waiting for J -- Ishiguro, Kazuo -- 0 -- e18734dede310d3093910b7ae041fd4f -- Anna’s Archive.pdf">WFJ</a>
+</li>
+</ul>
+</details>
+<h3 id="more">More</h3>
+<p><a target="_blank" rel="noopener" href="https://bimsa.net/activity/FraGeoandAna/">FGA</a>
+<a target="_blank" rel="noopener" href="https://bimsa.net/activity/PriBunConandHol/">PBCH</a>
+<a target="_blank" rel="noopener" href="https://bimsa.net/activity/Holandspemet/">HSM</a></p>
+</div>
+
+  </div>
+  <!--评论块-->
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2025-2026-1/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#em-syl-tt"><span class="post-toc-number">1.</span> <span class="post-toc-text">EM-syl-tt</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#am-syl"><span class="post-toc-number">2.</span> <span class="post-toc-text">AM-syl</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hg-syl"><span class="post-toc-number">3.</span> <span class="post-toc-text">HG-syl</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#as-syl"><span class="post-toc-number">4.</span> <span class="post-toc-text">AS-syl</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#eng-syl"><span class="post-toc-number">5.</span> <span class="post-toc-text">Eng-syl</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#latin-syl"><span class="post-toc-number">6.</span> <span class="post-toc-text">Latin-syl</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nf-syl"><span class="post-toc-number">7.</span> <span class="post-toc-text">NF-syl…</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#more"><span class="post-toc-number">8.</span> <span class="post-toc-text">More</span></a></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  For the &lt;em&gt;beautiful world&lt;/em&gt; !</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>
