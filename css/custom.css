@@ -24,6 +24,13 @@
   font-style: italic;
   font-display: swap;
 }
+@font-face {
+  font-family: 'AlegreyaIt';
+  src: url('/fonts/Alegreya-Italic-VariableFont_wght') format('truetype');
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
 
 /* 全局覆盖 */
 body,
