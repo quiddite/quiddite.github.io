@@ -12,7 +12,7 @@
   font-family: 'Alegreya';
   src: local('Alegreya'),
        local('Alegreya-Italic'),
-       url('/fonts/Alegreya-VariableFont_wght.ttf') format('ttf');
+       url('/fonts/Alegreya-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
