@@ -25,24 +25,43 @@
   font-display: swap;
 }
 
-/* 全局覆盖 */
-.post-content,
-.markdown-body {
+/* ========================================
+   全站正文：LM Roman Custom
+   ======================================== */
+
+body {
   font-family: 'LM Roman Custom', serif !important;
 }
 
-/* 标题 */
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-.post-content h5,
-.post-content h6 {
-  font-family: "Alegreya", "Palatino", "Charter", "Georgia",
-               "Songti", "SimSong", "Simsun", sans-serif,
-               -apple-system, BlinkMacSystemFont, "Segoe UI",
-               "Noto Sans", Helvetica, Arial,
-               "Apple Color Emoji", "Segoe UI Emoji" !important;
+
+/* ========================================
+   全站标题：Alegreya
+   ======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Alegreya",
+    "Palatino",
+    "Charter",
+    "Georgia",
+    "Songti",
+    "SimSong",
+    "Simsun",
+    sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans",
+    Helvetica,
+    Arial,
+    "Apple Color Emoji",
+    "Segoe UI Emoji"
+    !important;
 }
 
 /* ===== 仅作用于 light 模式 ===== */
