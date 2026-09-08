@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'Alegreya';
-  src: url('/fonts/Alegreya-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/Alegreya-Italic-VariableFont_wght') format('truetype');
   font-weight: 400 700;
   font-style: italic;
   font-display: swap;
