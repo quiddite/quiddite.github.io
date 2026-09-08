@@ -26,11 +26,13 @@
 <meta property="og:site_name" content="For the beautiful world !">
 <meta property="og:description" content="Welcome to Hexo! This is my very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick S">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://quiddite.github.io/img/example.png">
 <meta property="article:published_time" content="2024-11-17T08:03:47.984Z">
-<meta property="article:modified_time" content="2024-12-09T06:36:31.723Z">
+<meta property="article:modified_time" content="2026-09-08T12:05:17.680Z">
 <meta property="article:author" content="quiddite">
 <meta property="article:tag" content="greeting">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://quiddite.github.io/img/example.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -362,7 +364,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          365 words
+          3.9k words
         
       </span>
     
@@ -373,7 +375,7 @@
         
         
         
-          4 mins
+          33 mins
         
       </span>
     
@@ -449,6 +451,383 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Gener
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
 <p>More info: <a
 target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h1 id="hexo-fluid-功能集中演示">Hexo + Fluid 功能集中演示</h1>
+<blockquote>
+<p>这是一篇用于测试 Hexo + Fluid 各种写作功能的 Demo。</p>
+</blockquote>
+<hr />
+<h2 id="note">1. Note</h2>
+<h3 id="info">Info</h3>
+<div class="note note-info">
+            <p>这是一个 <code>info</code> note。</p> <p>可以在这里写 <strong>Markdown</strong>，也可以写数学公式：</p> 
+          </div>
+<h3 id="success">Success</h3>
+<div class="note note-success">
+            <p>证明已经完成。</p> 
+          </div>
+<h3 id="warning">Warning</h3>
+<div class="note note-warning">
+            <p>这里需要特别注意：这个假设不能被删除。</p> 
+          </div>
+<h3 id="danger">Danger</h3>
+<div class="note note-danger">
+            <p>如果忽略这个条件，结论一般不成立。</p> 
+          </div>
+<h3 id="primary">Primary</h3>
+<div class="note note-primary">
+            <p>这是 <code>primary</code> 类型的提示框。</p> 
+          </div>
+<h3 id="secondary">Secondary</h3>
+<div class="note note-secondary">
+            <p>这是 <code>secondary</code> 类型的提示框。</p> 
+          </div>
+<hr />
+<h2 id="tabs">2. Tabs</h2>
+<p>Tabs 非常适合展示不同情况。</p>
+<div class="tag-common tabs" id="geometry"><ul class="nav-tabs"><li class="tab active"><a data-target="geometry-1">Closed surface</a></li><li class="tab"><a data-target="geometry-2">Cusp</a></li><li class="tab"><a data-target="geometry-3">Funnel</a></li></ul><div class="tab-content"><div class="tab-pane active" id="geometry-1"><p>设 <span class="math inline"><em>S</em></span>
+是一个闭的双曲曲面。</p></div><div class="tab-pane" id="geometry-2"><p>如果存在 cusp，则相应的端是抛物型的。</p></div><div class="tab-pane" id="geometry-3"><p>如果存在 funnel，则相应的端是双曲型的。</p></div></div></div>
+<hr />
+<h2 id="fold">3. Fold</h2>
+<p>Fold 最适合隐藏较长的证明或者技术细节。</p>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-b007a514" role="button" aria-expanded="false" aria-controls="collapse-b007a514">
+        <div class="fold-arrow">▶</div>Proof
+      </div>
+      <div class="fold-collapse collapse" id="collapse-b007a514">
+        <div class="fold-content">
+          <p>我们证明：</p> <p>由基本积分公式，</p> 
+        </div>
+      </div>
+    </div>
+<h3 id="technical-details">Technical details</h3>
+
+    <div class="fold">
+      <div class="fold-title fold-secondary collapsed" data-toggle="collapse" href="#collapse-c5dc65b7" role="button" aria-expanded="false" aria-controls="collapse-c5dc65b7">
+        <div class="fold-arrow">▶</div>Technical details
+      </div>
+      <div class="fold-collapse collapse" id="collapse-c5dc65b7">
+        <div class="fold-content">
+          <p>这里可以放比较冗长的计算，而不会让正文显得过于拥挤。</p> <p>例如：</p> 
+        </div>
+      </div>
+    </div>
+<hr />
+<h2 id="label">4. Label</h2>
+<p>Label 适合在正文中标记关键词。</p>
+<span class="label label-primary">Definition</span>
+<span class="label label-info">Important</span>
+<span class="label label-success">New</span>
+<span class="label label-warning">Warning</span>
+<span class="label label-danger">Danger</span>
+<p>例如：</p>
+<p>The <span class="label label-info earthquake measure"></span> plays an important role in the theory.</p>
+<hr />
+<h2 id="blockquote">5. Blockquote</h2>
+<p>可以使用 Hexo 的 blockquote Tag。</p>
+<blockquote><p>这里放一段引用。</p>
+<footer><strong>Henri Poincaré</strong></footer></blockquote>
+<p>也可以把它用于数学史背景。</p>
+<blockquote><p>这里可以放 Thurston 的相关引用。</p>
+<footer><strong>Thurston</strong></footer></blockquote>
+<hr />
+<h2 id="post-link">6. Post Link</h2>
+<p>如果博客中有另一篇文章，例如：</p>
+<p>可以使用：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">&#123;% post_link earthquake %&#125;<br></code></pre></td></tr></table></figure>
+<p>或者指定显示名称：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">&#123;% post_link earthquake &#x27;Earthquake Theory&#x27; %&#125;<br></code></pre></td></tr></table></figure>
+<p>实际使用时：</p>
+<p>See also <code>&#123;% post_link earthquake 'Earthquake Theory' %&#125;</code>.</p>
+<blockquote>
+<p>如果你的博客里不存在
+<code>earthquake.md</code>，这个链接当然需要替换成你实际存在的文章。</p>
+</blockquote>
+<hr />
+<h2 id="include-code">7. Include Code</h2>
+<p>假设目录中有：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">source/<br>├── _posts/<br>│   └── hexo-demo.md<br>└── _data/<br>    └── example.py<br></code></pre></td></tr></table></figure>
+<p>可以使用：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">&#123;% include_code lang:python example.py %&#125;<br></code></pre></td></tr></table></figure>
+<p>例如：</p>
+
+<p>也可以只引入某一部分代码，例如：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">&#123;% include_code lang:python from:10 to:20 example.py %&#125;<br></code></pre></td></tr></table></figure>
+<p>这对于展示实验代码非常有用。</p>
+<hr />
+<h2 id="raw">8. Raw</h2>
+<p>如果我们希望<strong>展示 Hexo Tag 本身，而不是让 Hexo
+执行它</strong>，可以使用 <code>raw</code>。</p>
+<p>例如：</p>
+
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">&#123;% note warning %&#125;<br>This is an example.<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>上面的内容会作为普通文本展示，而不会真的生成 Note。</p>
+<p>这在写 Hexo 教程时尤其有用。</p>
+<hr />
+<h2 id="markdown-code-block">9. Markdown Code Block</h2>
+<p>普通 Markdown 代码块：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>x = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">100</span>)<br><br>y = x ** <span class="hljs-number">2</span><br><br><span class="hljs-built_in">print</span>(y)<br></code></pre></td></tr></table></figure>
+<p>也可以展示其他语言：</p>
+<figure class="highlight julia"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs julia"><span class="hljs-keyword">function</span> f(x)<br>    <span class="hljs-keyword">return</span> x^<span class="hljs-number">2</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Hello, Hexo!&quot;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="image">11. Image</h2>
+<p>普通 Markdown：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">Example image</span>](<span class="hljs-link">/img/example.png</span>)<br></code></pre></td></tr></table></figure>
+<p>也可以使用 Hexo 的图片 Tag：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">&#123;% img /img/example.png 600 400 %&#125;<br></code></pre></td></tr></table></figure>
+<p>例如：</p>
+<img src="/img/example.png" srcset="/img/loading.gif" lazyload class="" width="600" height="400">
+<blockquote>
+<p>如果你的 <code>/img/example.png</code>
+不存在，这里需要替换成实际图片路径。</p>
+</blockquote>
+<hr />
+<h2 id="toc">12. TOC</h2>
+<p>对于较长文章，可以根据标题自动生成目录。</p>
+<p>例如本文包含：</p>
+<ul>
+<li>Note</li>
+<li>Tabs</li>
+<li>Fold</li>
+<li>Label</li>
+<li>Blockquote</li>
+<li>Post Link</li>
+<li>Include Code</li>
+<li>Raw</li>
+<li>Code Block</li>
+<li>Mathematical Formula</li>
+<li>Image</li>
+</ul>
+<p>可以在文章开头或者适当位置放置目录。</p>
+<p>如果你的 Fluid 配置启用了 TOC，可以利用文章标题自动生成导航。</p>
+<hr />
+<h2 id="综合示例数学定理">13. 综合示例：数学定理</h2>
+<p>下面把前面的功能组合起来。</p>
+<div class="note note-info">
+            <p><strong>Theorem.</strong> Let <span class="math inline">(<em>X</em>, <em>d</em>)</span> be a compact metric space. Then every continuous function</p> <p>is bounded.</p> 
+          </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-854eae75" role="button" aria-expanded="false" aria-controls="collapse-854eae75">
+        <div class="fold-arrow">▶</div>Proof
+      </div>
+      <div class="fold-collapse collapse" id="collapse-854eae75">
+        <div class="fold-content">
+          <p>由于 <span class="math inline"><em>X</em></span> 是紧空间，而 <span class="math inline"><em>f</em></span> 连续，因此 <span class="math inline"><em>f</em>(<em>X</em>)</span> 是 <span class="math inline">ℝ</span> 中的紧集。</p> <p><span class="math inline">ℝ</span> 中的紧集是有界的，所以存在 <span class="math inline"><em>M</em> &gt; 0</span>，使得</p> <p>因此 <span class="math inline"><em>f</em></span> 有界。</p> 
+        </div>
+      </div>
+    </div>
+<div class="note note-success">
+            <p><strong>Conclusion.</strong> Compactness + continuity gives boundedness.</p> 
+          </div>
+<hr />
+<h2 id="综合示例case-distinction">14. 综合示例：Case Distinction</h2>
+<div class="tag-common tabs" id="cases"><ul class="nav-tabs"><li class="tab active"><a data-target="cases-1">Case 1: Compact</a></li><li class="tab"><a data-target="cases-2">Case 2: Locally compact</a></li><li class="tab"><a data-target="cases-3">Case 3: Non-compact</a></li></ul><div class="tab-content"><div class="tab-pane active" id="cases-1"><div class="note note-info">
+<pre><code class="hljs">        &lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;X&lt;/em&gt;&lt;/span&gt; 是紧的。&lt;/p&gt; 
+      &lt;/div&gt;</code></pre>
+<p>由紧性可以获得有限覆盖等性质。</p>
+</div></div><div class="tab-pane" id="cases-2"><div class="note note-warning">
+<pre><code class="hljs">        &lt;p&gt;局部紧性只给出局部性质，不能直接替代全局紧性。&lt;/p&gt; 
+      &lt;/div&gt;</code></pre>
+</div></div><div class="tab-pane" id="cases-3"><div class="note note-danger">
+<pre><code class="hljs">        &lt;p&gt;如果 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;X&lt;/em&gt;&lt;/span&gt; 非紧，则连续函数不一定有界。&lt;/p&gt; 
+      &lt;/div&gt;</code></pre>
+</div></div></div></div>
+<hr />
+<h2 id="综合示例research-note">15. 综合示例：Research Note</h2>
+<span class="label label-primary">Idea</span>
+<p>考虑一个研究问题：</p>
+<div class="note note-warning">
+            <p><strong>Potential problem.</strong></p> <p>原来的证明使用了 compactness，但实际上可能只需要 properness。</p> 
+          </div>
+
+    <div class="fold">
+      <div class="fold-title fold-secondary collapsed" data-toggle="collapse" href="#collapse-168a5ca8" role="button" aria-expanded="false" aria-controls="collapse-168a5ca8">
+        <div class="fold-arrow">▶</div>Possible approach
+      </div>
+      <div class="fold-collapse collapse" id="collapse-168a5ca8">
+        <div class="fold-content">
+          <p>第一步，检查证明中 compactness 第一次出现的位置。</p> <p>第二步，判断那里实际上使用的是：</p> <p>第三步，尝试用 properness 替代。</p> 
+        </div>
+      </div>
+    </div>
+<div class="note note-success">
+            <p><strong>Research direction.</strong></p> <p>如果替换成功，可能得到一个更一般的 theorem。</p> 
+          </div>
+<hr />
+<h2 id="checkbox">16. Checkbox</h2>
+<p>可以把它作为 Research TODO：</p>
+<div>
+            <input type="checkbox"  >Read the original paper
+
+          </div>
+<div>
+            <input type="checkbox"  >Check the proof
+
+          </div>
+<div>
+            <input type="checkbox"  >Find a counterexample
+
+          </div>
+<div>
+            <input type="checkbox"  >Write the generalization
+
+          </div>
+<p>也可以默认勾选：</p>
+<div>
+            <input type="checkbox"  checked="checked">First step completed
+
+          </div>
+<hr />
+<h1 id="一个完整的数学笔记模板">17. 一个完整的数学笔记模板</h1>
+<p>以后写数学研究笔记，可以直接采用下面的结构：</p>
+<div class="note note-info">
+            <p><strong>Definition.</strong></p> <p>定义研究对象。</p> 
+          </div>
+<div class="note note-primary">
+            <p><strong>Main Question.</strong></p> <p>我们真正想解决的问题是什么？</p> 
+          </div>
+<div class="note note-success">
+            <p><strong>Main Idea.</strong></p> <p>核心思路是什么？</p> 
+          </div>
+<div class="tag-common tabs" id="approaches"><ul class="nav-tabs"><li class="tab active"><a data-target="approaches-1">Approach A</a></li><li class="tab"><a data-target="approaches-2">Approach B</a></li></ul><div class="tab-content"><div class="tab-pane active" id="approaches-1"><p>第一种方法。</p></div><div class="tab-pane" id="approaches-2"><p>第二种方法。</p></div></div></div>
+<div class="note note-warning">
+            <p><strong>Technical obstacle.</strong></p> <p>目前真正困难的地方。</p> 
+          </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-04a4a053" role="button" aria-expanded="false" aria-controls="collapse-04a4a053">
+        <div class="fold-arrow">▶</div>Proof / Calculation
+      </div>
+      <div class="fold-collapse collapse" id="collapse-04a4a053">
+        <div class="fold-content">
+          <p>详细证明或者计算。</p> 
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
+      <div class="fold-title fold-secondary collapsed" data-toggle="collapse" href="#collapse-cacb93fb" role="button" aria-expanded="false" aria-controls="collapse-cacb93fb">
+        <div class="fold-arrow">▶</div>Further questions
+      </div>
+      <div class="fold-collapse collapse" id="collapse-cacb93fb">
+        <div class="fold-content">
+          <p>这里记录证明完成以后产生的新问题。</p> 
+        </div>
+      </div>
+    </div>
+<div>
+            <input type="checkbox"  >Check references
+
+          </div>
+<div>
+            <input type="checkbox"  >Write proof
+
+          </div>
+<div>
+            <input type="checkbox"  >Run numerical experiment
+
+          </div>
+<hr />
+<h1 id="最终总结">18. 最终总结</h1>
+<p>本文集中演示了：</p>
+<span class="label label-primary">Note</span>
+<span class="label label-primary">Tabs</span>
+<span class="label label-primary">Fold</span>
+<span class="label label-primary">Label</span>
+<span class="label label-primary">Post Link</span>
+<span class="label label-primary">Blockquote</span>
+<span class="label label-primary">Include Code</span>
+<span class="label label-primary">Raw</span>
+<span class="label label-primary">Code Block</span>
+<span class="label label-primary">Math</span>
+<span class="label label-primary">Image</span>
+<span class="label label-primary">TOC</span>
+<span class="label label-primary">Checkbox</span>
+<p>其中，对于数学研究博客，我最推荐的组合是：</p>
+<p>它们分别负责：</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Note</td>
+<td>定义、定理、警告、重要观点</td>
+</tr>
+<tr>
+<td>Tabs</td>
+<td>不同情况、不同证明、不同方法</td>
+</tr>
+<tr>
+<td>Fold</td>
+<td>Proof、Technical Details</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>Definition、Idea、Important 等标签</td>
+</tr>
+<tr>
+<td>Post Link</td>
+<td>建立文章之间的知识网络</td>
+</tr>
+<tr>
+<td>Blockquote</td>
+<td>文献与历史背景</td>
+</tr>
+<tr>
+<td>Include Code</td>
+<td>实验代码</td>
+</tr>
+<tr>
+<td>Raw</td>
+<td>展示 Hexo 语法</td>
+</tr>
+<tr>
+<td>Checkbox</td>
+<td>Research TODO</td>
+</tr>
+<tr>
+<td>MathJax</td>
+<td>数学公式</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>几何图、示意图</td>
+</tr>
+<tr>
+<td>TOC</td>
+<td>长文章导航</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="推荐的最终写作风格">19. 推荐的最终写作风格</h1>
+<p>一个成熟的数学 Hexo 博客可以逐渐形成这样的结构：</p>
+<p><strong>Definition</strong></p>
+<p>↓</p>
+<p><strong>Theorem</strong></p>
+<p>↓</p>
+<p><strong>Idea</strong></p>
+<p>↓</p>
+<p><strong>Proof</strong></p>
+<p>↓</p>
+<p><strong>Technical Details</strong></p>
+<p>↓</p>
+<p><strong>Examples / Counterexamples</strong></p>
+<p>↓</p>
+<p><strong>Open Problems</strong></p>
+<p>↓</p>
+<p><strong>References</strong></p>
+<p>而 Hexo + Fluid 的这些 Tag Plugin，实际上就是在 Markdown
+之上提供了一层轻量的“数学讲义排版系统”。</p>
+<p>这也是我认为它们最值得使用的地方。</p>
 
                 
               </div>
