@@ -1,0 +1,198 @@
+---
+title: G2T learning materials
+date: 2025-06-07 16:45:02
+tags: g2t
+categories: math
+archive: true
+---
+
+<!-- References: -->
+<ul>
+<li>
+<a href="http://faculty.bicmr.pku.edu.cn/~wyang/ggt/%E5%87%A0%E4%BD%95%E7%BE%A4%E8%AE%BA%E5%AD%A6%E4%B9%A0%E5%AF%BC%E5%BC%95.pdf">几何群论学习导引</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/杨-几何群论学习导引.pdf">local</a></li>
+
+<li>
+<a href="http://faculty.bicmr.pku.edu.cn/~wyang/ggt/GGTnotes.pdf">GGTnotes</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/GGTnotes.pdf">local</a></li>
+<li>
+<a href="http://faculty.bicmr.pku.edu.cn/~wyang/ggt/NotesonHyperbolicBoundaries.pdf">Hyperbolic boundary</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/NotesonHyperbolicBoundaries.pdf">local</a></li>
+
+
+<li>
+<a href="https://bhbowditch.com/drivel.html">Bowditch's research summary</a></li>
+
+
+<li>
+<a href="https://quiddite.github.io/files/description.pdf">Description</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/description.pdf">local</a></li>
+
+
+
+
+
+</ul>
+
+
+<details>
+<summary>HG</summary>
+<ul>
+<li>
+<a href="https://link.springer.com/chapter/10.1007/978-1-4613-9586-7_3">Gromov Hyperbolic groups</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Gromov Hyperbolic groups.pdf">local</a></li>
+
+
+<li>
+<a href="https://www.google.com.hk/url?sa=t&source=web&rct=j&opi=89978449&url=https://projecteuclid.org/ebooks/mathematical-society-of-japan-memoirs/a-course-on-geometric-group-theory/toc/10.2969/msjmemoirs/016010000&ved=2ahUKEwiZycvQvOGNAxXDcGwGHXZiBNcQFnoECBYQAQ&usg=AOvVaw0BzhGI0dUWdu9ZX1w2XWy1">Bowditch GGT</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Bowditch GGT.pdf">local</a></li>
+
+
+<li>
+<a href="https://www.i2m.univ-amu.fr/~short/Papers/MSRInotes2004.pdf">Short Notes HG</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Short Notes HG.pdf">local</a></li>
+
+<li>
+<a href="https://link.springer.com/book/10.1007/978-3-662-12494-9">MSNPC</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/978-3-662-12494-9.pdf">local</a></li>
+
+<li>
+<a href="https://www.overleaf.com/project/643f9cad7c113caf9ac35f3f">几何群论</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/几何群论.pdf">local</a></li>
+
+</ul>
+</details>
+
+<details>
+<summary>CGT</summary>
+<ul>
+
+<li>
+<a href="http://faculty.bicmr.pku.edu.cn/~wyang/ggt/CGTMiller.pdf">Miller CGT</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Miller CGT.pdf">local</a></li>
+
+<li>
+<a href="https://www.cambridge.org/core/books/homological-group-theory/topological-methods-in-group-theory/A9868486C3815839B6263634C3DDF080">Scott TMGT</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Scott TMGT.pdf">local</a></li>
+
+<li>
+<a href="https://link.springer.com/book/10.1007/978-3-642-61856-7">Serre trees</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Serre Trees.pdf">local</a></li>
+
+</ul>
+</details>
+
+<details>
+<summary>HP</summary>
+<ul>
+
+<li>
+<a href="https://link.springer.com/book/10.1007/978-1-4612-1146-4">Beardon GDG</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Beardon GDG.pdf">local</a></li>
+
+<li>
+<a href="https://people.dm.unipi.it/martelli/Geometric_topology.pdf">Martelli GT</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Martelli GT.pdf">local</a></li>
+
+</ul>
+</details>
+
+<details>
+<summary>MCG</summary>
+<ul>
+
+<li>
+<a href="https://press.princeton.edu/books/hardcover/9780691147949/a-primer-on-mapping-class-groups">MCG primer</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/MCG primer.pdf">local</a></li>
+
+
+<li>
+<a href="https://www.google.com.hk/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.math.uchicago.edu/~farb/papers/mcgbook.pdf&ved=2ahUKEwib6NmEw-GNAxUC-zgGHYlnHL0QFnoECBgQAQ&usg=AOvVaw2mGpAXMkUvVVYr0wIfoyXn">MCG problems</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/MCG problems.pdf">local</a></li>
+
+</ul>
+</details>
+
+
+<details>
+<summary>BHG</summary>
+
+Survey
+<ul>
+<li>
+<a href="https://arxiv.org/abs/math/0202286">Kapovich BHG</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Kapovich BHG.pdf">local</a></li>
+</ul>
+
+Dynamic
+
+<ul>
+<li>
+<a href="https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1093/plms/s3-55_2.331">Gehring DQG</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Gehring DQG.pdf">local</a></li>
+
+<li>
+<a href="https://www.google.com.hk/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.degruyterbrill.com/document/doi/10.1515/9783110806861.23/html%3Fsrsltid%3DAfmBOoojJnf19Qn51lUqFuUIxMmmEdRkJFtGusQqsma_2uOuRrUDa7ZE&ved=2ahUKEwifmpGlxuGNAxVCLEQIHcQ0MkMQFnoECBkQAQ&usg=AOvVaw0IOW2dzkcnbUgF-8s8_I-o">Bodwitch CGCS</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Bodwitch CGCS.pdf">local</a></li>
+</ul>
+
+PS Measure
+
+<ul>
+<li>
+<a href="https://link.springer.com/article/10.1007/BF02392046">Patterson</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Patterson BF02392046.pdf">local</a></li>
+
+<li>
+<a href="https://link.springer.com/article/10.1007/BF02684773">Sullivan</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Sullivan BF02684773.pdf">local</a></li>
+
+<li>
+<a href="https://projecteuclid.org/journals/pacific-journal-of-mathematics/volume-159/issue-2/Mesures-de-Patterson-Sullivan-sur-le-bord-dun-espace-hyperbolique/pjm/1102634263.full">Coornaert</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Coornaert 1102634263.pdf">local</a></li>
+
+<li>
+<a href="https://www.cambridge.org/core/books/ergodic-theory-of-discrete-groups/772D06950A3A33DB56CBC556C4F7027A">Nicholls ETDG</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Nicholls ETDG.pdf">local</a></li>
+
+</ul>
+</details>
+
+
+<details>
+<summary>RHG</summary>
+<ul>
+
+
+<li>
+<a href="https://arxiv.org/abs/0801.4596">Hruska 0801.4596</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Hruska 0801.4596.pdf">local</a></li>
+
+<li>
+<a href="https://worldscientific.com/doi/abs/10.1142/S0218196712500166">Bowditch RHG</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Bowditch RHG.pdf">local</a></li>
+
+<li>
+<a href="https://link.springer.com/article/10.1007/s000390050075">Farb RHG</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Farb RHG.pdf">local</a></li>
+
+<li>
+<a href="https://arxiv.org/abs/math/0404040">Osin RHG</a>&emsp;<a href="file:///Users/a86182/Library/Mobile Documents/3L68KQB4HG~com~readdle~CommonDocuments/Documents/__g2t/Osin RHG.pdf">local</a></li>
+
+
+</ul>
+</details>
+
+<!-- aaaaa
+blaa
+<details>
+    <summary>MISC</summary>
+    <details>
+        <summary>1st week: HS and HG</summary>
+        <div>blabla</div>
+    </details>
+    <details>
+        <summary>2nd week: BHG</summary>
+        <div>blabla</div>
+    </details>
+    <div>blabla</div>
+</details> -->
+
+<!-- aaa -->
+
+<details>
+    <summary>MISC</summary>
+    <details>
+        <summary>1st week: HS and HG</summary>
+        <div>blabla</div>
+    </details>
+    <details>
+        <summary>2nd week: BHG</summary>
+        <div>blabla</div>
+    </details>
+    <details>
+        <summary>3rd week: BG</summary>
+        <div><a href="https://nsalter.science.nd.edu/teaching/braidsspring2024/">Braidsspring24</a></div>
+    </details>
+    <details>
+        <summary>4th week: MCG</summary>
+        <div>blabla</div>
+        <a href="https://quiddite.github.io/files/blank.pdf">blabla</a>
+        {% pdf https://quiddite.github.io/files/blank.pdf %}
+    </details>
+    <div>blablaaa</div>
+</details>
